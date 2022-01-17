@@ -1,0 +1,24 @@
+{{define "index"}}
+{{template "header"}}
+<main class="px-3">
+  <h1>Home page.</h1>
+
+  <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe ipsam similique officiis, qui cupiditate voluptatum? Laboriosam, quia? Tempore dolorem debitis reprehenderit? Optio aliquam voluptate porro, facere esse praesentium rerum. Cupiditate?
+  Explicabo, reprehenderit! Distinctio quaerat ab, necessitatibus aliquam voluptate nihil sunt ad dolorum facere totam dolores quod. Voluptatum necessitatibus voluptates hic itaque velit vero quam, ea eius odio ut, eveniet sint.
+  Exercitationem vel, eaque distinctio iusto ratione minus! Totam quibusdam harum tenetur molestiae explicabo tempora error exercitationem, tempore in odio amet hic eos aperiam distinctio dolor corporis? Delectus soluta fugit aut!</p>
+  
+  {{ range . }}
+    <div class="alert alert-danger">
+      <h2>{{ .Title }}</h2>
+      <p>{{ .Anons }}</p>
+      <a href="/post/{{ .Id }}" class="btn btn-danger">More about the post</a>
+    </div>
+  {{else}}
+  <p class="lead">Posts not found</p>
+  {{end}} 
+  <p class="lead">
+    <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
+  </p>
+</main>
+{{template "footer"}}
+{{end}}
